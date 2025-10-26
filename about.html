@@ -6,6 +6,79 @@
     <title>About Me | Jobin Jose </title>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .about-section {
+            margin-bottom: 3rem;
+        }
+
+        .highlight-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4CAF50;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            color: #2e7d32;
+        }
+
+        .trading-philosophy {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h4 {
+            color: #4CAF50;
+            margin-top: 0;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 0.5rem;
+        }
+
+        .journey-timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .journey-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .journey-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #4CAF50;
+            border-radius: 50%;
+        }
+
+        .journey-item h4 {
+            color: #4CAF50;
+            margin: 0 0 0.5rem 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,19 +97,115 @@
     </header>
     <main>
         <section class="about">
-            <h2>Hello, I'm Jobin Jose</h2>
-            <p>I am currently pursuing a Bachelor of Finance at Western University. My academic journey has equipped me with a solid understanding of financial principles, economic analysis, and strategic decision-making. I am passionate about applying my skills to real-world financial challenges and making a meaningful impact in the industry.</p>
-            <h3>Skills</h3>
-            <ul>
-                <li>Financial Analysis</li>
-                <li>using of HTML for web development and web designing</li>
-                <li>Proficient in Intuit and QuickBooks</li>
-                <li>Investment Strategies</li>
-                <li>Data-Driven Decision Making</li>
-                <li>Team Collaboration and Leadership</li>
-            </ul>
-            <h3>Interests</h3>
-            <p>Beyond academics, I enjoy exploring financial markets, reading about economic trends, and working on collaborative projects that challenge my problem-solving skills.</p>
+            <div class="about-section">
+                <h2>Hello, I'm Jobin Jose</h2>
+                <p>I am currently pursuing a Bachelor of Finance at Western University, where I've developed a strong foundation in financial markets, quantitative analysis, and risk management. While my academic journey has equipped me with essential theoretical knowledge, my true passion lies in the practical application of these principles through systematic trading in forex and indices markets.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>My Trading Journey</h3>
+                <p>What began as curiosity about market dynamics has evolved into a disciplined approach to trading built on institutional order flow concepts and price action analysis. I specialize in multi-timeframe analysis, focusing on high-probability setups where smart money leaves clear footprints: fair value gaps, liquidity sweeps, and changes in state of delivery.</p>
+                <p>Trading has taught me invaluable lessons beyond profit and loss: the importance of patience, the necessity of risk management, and the discipline to follow a systematic process even when emotions tempt deviation. Every trade, win or loss, is a data point that refines my understanding of market structure.</p>
+            </div>
+
+            <div class="about-section">
+                <h3>Why Forex & Indices?</h3>
+                <p>I'm drawn to forex and indices trading for several compelling reasons:</p>
+                <ul>
+                    <li><strong>Market Efficiency:</strong> The 24-hour nature of forex markets and the liquidity of major indices provide countless opportunities to apply systematic strategies across multiple timeframes.</li>
+                    <li><strong>Institutional Participation:</strong> These markets are heavily influenced by smart money, making them ideal for order flow analysis and understanding how large players position themselves.</li>
+                    <li><strong>Leverage & Accessibility:</strong> The ability to control significant positions with proper risk management allows for capital efficiency while maintaining strict 1% risk per trade discipline.</li>
+                    <li><strong>Pure Technical Analysis:</strong> Price action in these markets reflects real-time sentiment shifts, economic data releases, and institutional positioning, creating a rich environment for technical traders.</li>
+                </ul>
+            </div>
+
+            <div class="trading-philosophy">
+                <h3>My Trading Philosophy</h3>
+                <p><em>"Amateurs think about how much money they can make. Professionals think about how much money they could lose." – Jack Schwager</em></p>
+                <p>This quote fundamentally shaped how I approach every trade. Before I consider potential profits, I ask myself: "What's my maximum loss, and can I survive it?" This mindset shift transformed my trading from gambling into a sustainable profession.</p>
+                <p>My philosophy is built on three defensive principles:</p>
+                <ul>
+                    <li><strong>Capital Preservation Above All:</strong> Never risk more than 1% per trade. Every trade is executed knowing exactly what I'm willing to lose before thinking about what I could gain. My first job is to protect my account, not grow it aggressively.</li>
+                    <li><strong>Position Sizing = Risk Control:</strong> I size positions based on stop-loss distance, not on how confident I feel. Emotions don't determine risk,mathematics does. This ensures that even a string of losses won't devastate my account.</li>
+                    <li><strong>Worst-Case Scenario Planning:</strong> Before entering any trade, I visualize the worst possible outcome. If price stops me out, will I be able to trade tomorrow? If the answer is no, I don't take the trade. Survival first, profits second.</li>
+                </ul>
+                <p>By focusing obsessively on what I could lose rather than what I could make, I've found that profits take care of themselves. A 1:4 risk-reward ratio means I only need to be right 25% of the time to break even—but my edge comes from being right 40-50% of the time while never risking more than I can afford to lose.</p>
+            </div>
+
+            <div class="about-section">
+                <h3>What I'm Working On</h3>
+                <div class="journey-timeline">
+                    <div class="journey-item">
+                        <h4>Live Trading Track Record</h4>
+                        <p>Building a verifiable track record starting July 2025, documenting every trade with full transparency. Real results, real accountability.</p>
+                    </div>
+                    <div class="journey-item">
+                        <h4>Algorithmic Development</h4>
+                        <p>Developing Pine Script indicators and strategies that automate my discretionary setups, combining institutional concepts like FVG detection and CISD signals with systematic execution.</p>
+                    </div>
+                    <div class="journey-item">
+                        <h4>Market Structure Analysis</h4>
+                        <p>Continuously refining my understanding of how smart money operates—studying liquidity engineering, order block theory, and the relationship between higher and lower timeframe structures.</p>
+                    </div>
+                    <div class="journey-item">
+                        <h4>Career Transition Goal</h4>
+                        <p>Leveraging my trading experience and finance education to break into sales & trading or proprietary trading firms, where I can apply these skills in a professional institutional environment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Trading Skills</h4>
+                    <ul>
+                        <li>Multi-Timeframe Analysis (W1/D1/H4/H1/M15/M30)</li>
+                        <li>Institutional Order Flow Concepts like VWAP and MA's</li>
+                        <li>Fair Value Gap (FVG) Trading</li>
+                        <li>Liquidity Sweep Identification</li>
+                        <li>Change in State of Delivery (CISD)</li>
+                        <li>Risk Management (1% rule)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Technical Skills</h4>
+                    <ul>
+                        <li>Pine Script (TradingView)</li>
+                        <li>HTML/CSS for Web Development</li>
+                        <li>QuickBooks & Intuit</li>
+                        <li>Financial Modeling</li>
+                        <li>Data Analysis</li>
+                        <li>Chart.js Visualization</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Financial Knowledge</h4>
+                    <ul>
+                        <li>Financial Statement Analysis</li>
+                        <li>Investment Strategies</li>
+                        <li>Forex & Options</li>
+                        <li>Portfolio Management</li>
+                        <li>Economic Indicators</li>
+                        <li>Market Microstructure</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h3>Beyond Trading</h3>
+                <p>When I'm not analyzing charts or backtesting strategies, I enjoy:</p>
+                <ul>
+                    <li><strong>Reading Market Psychology:</strong> Books like "Trading in the Zone" and "Market Wizards" that explore the mental game of trading</li>
+                    <li><strong>Economic Research:</strong> Following macroeconomic trends, central bank policies, and how they influence currency and equity markets</li>
+                    <li><strong>Community Engagement:</strong> Participating in trading communities to exchange ideas, challenge assumptions, and learn from others' experiences</li>
+                    <li><strong>Continuous Learning:</strong> Taking online courses on advanced technical analysis, quantitative trading, and market structure</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>My Goal</h3>
+                <p>I'm working toward a career where I can combine my passion for markets with institutional-level resources and mentorship. Whether that's in sales & trading at a bank, proprietary trading at a firm, or quantitative research, I want to be in an environment where I'm constantly learning, surrounded by talented traders, and contributing to a team's success.</p>
+                <p>Trading has shown me that I thrive in high-pressure, data-driven environments where discipline and continuous improvement are rewarded. I'm ready to bring this mindset, along with my systematic approach and proven track record, to a professional trading desk.</p>
+            </div>
         </section>
     </main>
     <footer>
