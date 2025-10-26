@@ -1,29 +1,29 @@
-/* General Styles */
 body {
     font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f9;
-    color: #333;
+    background: #f4f7fa;
+    color: #2c3e50;
     line-height: 1.6;
 }
 
 header .banner {
     text-align: center;
-    background: #4CAF50;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     color: #fff;
     padding: 40px 20px;
     font-size: 2.25rem;
-    font-family: 'Roboto', sans-serif; /* Updated font to a bold, professional style */
-    font-weight: 700; /* Ensures the text is bold */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(15, 52, 96, 0.3);
 }
-
 
 .navbar {
     display: flex;
     justify-content: center;
-    background: #333;
+    background: #1a1a2e;
     padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar li {
@@ -37,11 +37,13 @@ header .banner {
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
 .navbar a:hover {
-    background: #4CAF50;
+    background: #0f3460;
+    color: #4fc3f7;
+    transform: translateY(-2px);
 }
 
 main {
@@ -57,25 +59,28 @@ main {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border: 4px solid #4CAF50;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 4px solid #0f3460;
+    box-shadow: 0 4px 15px rgba(15, 52, 96, 0.4);
 }
 
 .btn {
     display: inline-block;
-    background: #4CAF50;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 25px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
     margin-top: 20px;
     text-align: center;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(15, 52, 96, 0.3);
 }
 
 .btn:hover {
-    background: #45a049;
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 52, 96, 0.4);
 }
 
 section {
@@ -83,15 +88,22 @@ section {
 }
 
 h2 {
-    color: #4CAF50;
+    color: #0f3460;
     text-align: center;
     margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h3 {
+    color: #16213e;
+    font-weight: 600;
 }
 
 ul {
     list-style: disc;
     margin: 20px;
-    color: #4CAF50;
+    color: #0f3460;
 }
 
 .projects {
@@ -103,14 +115,16 @@ ul {
 .project-item {
     background: #fff;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(15, 52, 96, 0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid #0f3460;
 }
 
 .project-item:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(15, 52, 96, 0.2);
 }
 
 .contact-form {
@@ -123,86 +137,155 @@ ul {
 
 .contact-form input,
 .contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 12px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
     font-size: 1rem;
     width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #0f3460;
 }
 
 .contact-form button {
     align-self: center;
-    padding: 10px 20px;
+    padding: 12px 30px;
     font-size: 1rem;
     cursor: pointer;
-    background: #4CAF50;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
     color: #fff;
     border: none;
-    border-radius: 5px;
-    transition: background 0.3s;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(15, 52, 96, 0.3);
 }
 
 .contact-form button:hover {
-    background: #45a049;
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 52, 96, 0.4);
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    background: #333;
+    background: #1a1a2e;
     color: #fff;
     font-size: 0.875rem;
     margin-top: 20px;
+    box-shadow: 0 -4px 15px rgba(15, 52, 96, 0.2);
 }
 
-
-/* =========================
-   Responsive Enhancements
-   ========================= */
-
-/* Fluid type & images */
-:root { --space: 1rem; }
-.banner h1 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); }
-.banner p  { font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
-img, video, canvas, iframe { max-width: 100%; height: auto; }
-
-/* Make tables scroll on small screens */
-table { width: 100%; border-collapse: collapse; }
-.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-th, td { word-break: break-word; }
-
-/* Allow nav to wrap nicely */
-.navbar { flex-wrap: wrap; gap: .25rem .5rem; }
-.navbar a { padding: 8px 12px; }
-
-/* Chart containers compress on phones */
-.chart-container { height: 400px; }
-@media (max-width: 768px){
-  main { padding: 16px; }
-  .projects { grid-template-columns: 1fr; }
-  .project-item { padding: 16px; }
-  .profile-photo { width: 120px; height: 120px; }
-  .contact-form { max-width: 100%; }
-  .btn { width: 100%; }
-  .chart-container { height: 300px; }
-  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-  header .banner { padding: 28px 16px; }
-  .navbar { justify-content: center; }
+footer a {
+    color: #4fc3f7;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* Very small devices */
-@media (max-width: 480px){
-  header .banner { padding: 22px 14px; }
-  .metrics-grid { grid-template-columns: 1fr; }
-  .btn { font-size: 0.95rem; padding: 10px 14px; }
-  .chart-container { height: 260px; }
-  ul { margin: 14px; }
+footer a:hover {
+    color: #81d4fa;
 }
 
-/* Resume embed responsive height */
-.resume-container embed,
-.resume-container iframe,
-.resume-container object { width: 100%; height: 70vh; max-height: 800px; border: none; }
+/* Additional accent colors for highlights */
+.highlight-accent {
+    color: #4fc3f7;
+}
 
-/* Improve contrast of links inside dark navbar on focus */
-.navbar a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 6px; }
+.bg-accent {
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+}
+
+.border-accent {
+    border-color: #0f3460;
+}
+
+/* Button variations */
+.btn-secondary {
+    background: transparent;
+    color: #0f3460;
+    border: 2px solid #0f3460;
+}
+
+.btn-secondary:hover {
+    background: #0f3460;
+    color: #fff;
+}
+
+/* Card styles for consistency */
+.card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(15, 52, 96, 0.1);
+    border-left: 4px solid #0f3460;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(15, 52, 96, 0.15);
+}
+
+/* Link styling */
+a {
+    color: #0f3460;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4fc3f7;
+}
+
+/* Intro section specific */
+.intro {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(15, 52, 96, 0.1);
+    margin-bottom: 2rem;
+}
+
+.highlights {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(15, 52, 96, 0.1);
+}
+
+/* Resume container */
+.resume-container {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(15, 52, 96, 0.1);
+    margin: 2rem 0;
+}
+
+/* About page specific styles */
+.about {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(15, 52, 96, 0.1);
+}
+
+/* Contact page */
+.contact {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(15, 52, 96, 0.1);
+}
+
+/* Portfolio page */
+.portfolio {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(15, 52, 96, 0.1);
+    margin-bottom: 2rem;
+}
