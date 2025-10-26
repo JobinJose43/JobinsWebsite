@@ -154,3 +154,55 @@ footer {
     font-size: 0.875rem;
     margin-top: 20px;
 }
+
+
+/* =========================
+   Responsive Enhancements
+   ========================= */
+
+/* Fluid type & images */
+:root { --space: 1rem; }
+.banner h1 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); }
+.banner p  { font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
+img, video, canvas, iframe { max-width: 100%; height: auto; }
+
+/* Make tables scroll on small screens */
+table { width: 100%; border-collapse: collapse; }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+th, td { word-break: break-word; }
+
+/* Allow nav to wrap nicely */
+.navbar { flex-wrap: wrap; gap: .25rem .5rem; }
+.navbar a { padding: 8px 12px; }
+
+/* Chart containers compress on phones */
+.chart-container { height: 400px; }
+@media (max-width: 768px){
+  main { padding: 16px; }
+  .projects { grid-template-columns: 1fr; }
+  .project-item { padding: 16px; }
+  .profile-photo { width: 120px; height: 120px; }
+  .contact-form { max-width: 100%; }
+  .btn { width: 100%; }
+  .chart-container { height: 300px; }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  header .banner { padding: 28px 16px; }
+  .navbar { justify-content: center; }
+}
+
+/* Very small devices */
+@media (max-width: 480px){
+  header .banner { padding: 22px 14px; }
+  .metrics-grid { grid-template-columns: 1fr; }
+  .btn { font-size: 0.95rem; padding: 10px 14px; }
+  .chart-container { height: 260px; }
+  ul { margin: 14px; }
+}
+
+/* Resume embed responsive height */
+.resume-container embed,
+.resume-container iframe,
+.resume-container object { width: 100%; height: 70vh; max-height: 800px; border: none; }
+
+/* Improve contrast of links inside dark navbar on focus */
+.navbar a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 6px; }
