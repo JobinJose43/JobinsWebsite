@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Jobin Jose</title>
+  <meta name="description" content="An earnings options scanner and an intraday trading strategy by Jobin Jose.">
+  <meta property="og:title" content="Projects | Jobin Jose">
+  <meta property="og:description" content="An earnings options scanner and an intraday trading strategy by Jobin Jose.">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&amp;display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="dark">
+    <nav class="wrap bar" aria-label="Main">
+      <a class="name" href="index.html">Jobin Jose</a>
+      <ul>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="resume.pdf">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="wrap page-head">
+      <h1>Projects</h1>
+      <p class="lede">A live research tool for earnings season, and a rule-based strategy you can step through candle by candle.</p>
+    </div>
+  </header>
+  <main>
+    <section class="teal band" id="scanner">
+      <div class="wrap">
+        <div class="pair mid">
+          <div>
+            <h2>Earnings Options Scanner</h2>
+            <p class="lede">One screen for earnings season: who reports next, what options are pricing, and whether the company has a habit of beating estimates.</p>
+            <p class="actions"><a class="btn" href="https://scanner.jobinjose.site">Open the live scanner</a> <a href="earnings.html">Explore the data</a> <a href="https://github.com/JobinJose43/earnings-scanner">View the code</a></p>
+          </div>
+          <a class="shot" href="https://scanner.jobinjose.site"><img src="images/scanner.png" width="1500" height="960" alt="The scanner listing upcoming reports with scores, expected moves and beat history."></a>
+        </div>
+        <div class="points">
+          <div><h3>Reads the options market</h3><p>Prices the at-the-money call and put to estimate the move traders expect through the report.</p></div>
+          <div><h3>Checks it against history</h3><p>Measures how the stock moved after each of its recent reports, adjusting for morning and evening releases.</p></div>
+          <div><h3>Covers three regions</h3><p>More than 160 stocks from the US, Europe and Asia, with sector tags and filters.</p></div>
+          <div><h3>Runs itself</h3><p>A scheduled job gathers the data, tests the logic and publishes the site three times each weekday. If too much data is missing, the last good version stays up.</p></div>
+        </div>
+        <div class="score">
+          <h3>How a stock earns its score</h3>
+          <ul>
+            <li><b>40</b>Consecutive beats</li>
+            <li><b>25</b>Size of beats</li>
+            <li><b>20</b>Revenue growth</li>
+            <li><b>15</b>Upgrades</li>
+            <li><b>10</b>Timing</li>
+          </ul>
+          <p class="note" style="margin-top:.75rem">Maximum points for each part. The total is capped at 100 and summarizes past data; it does not forecast returns.</p>
+        </div>
+      </div>
+    </section>
+    <section class="sun band stepper" id="new-york-atm">
+      <div class="wrap">
+        <div class="pair">
+          <div>
+            <h2>New York ATM Strategy</h2>
+            <p class="lede">A rule-based model for the New York open. Click through the trade.</p>
+            <ol class="steps">
+              <li><button data-step="1"><b>1</b><span>Mark the high and low from 7:00 to 9:29 AM Eastern.</span></button></li>
+              <li><button data-step="2"><b>2</b><span>Between 9:30 and 11:00, wait for price to sweep one of them.</span></button></li>
+              <li><button data-step="3"><b>3</b><span>Find the price gap left behind in the opposite direction.</span></button></li>
+              <li><button data-step="4"><b>4</b><span>Wait for a close through the gap, then enter on the next candle.</span></button></li>
+              <li><button data-step="5"><b>5</b><span>Stop beyond the sweep. Target the opposite level.</span></button></li>
+            </ol>
+          </div>
+          <div>
+            <figure><svg id="atm" viewBox="0 0 600 350" role="img" aria-label="Illustrated candlestick chart of a session low being swept, followed by a reversal entry and a rise to the session high."></svg></figure>
+            <p class="note" style="margin-top:.75rem">Illustrated example, not a real trade.</p>
+            <p class="actions"><a class="btn" href="nyam.html">See a real chart and the backtest</a> <a href="https://www.tradingview.com/script/TQZdIvcg-BSL-SSL-Sweep-FVG-Strategy-Jobin-c/">View the script</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="light band"><div class="wrap"><p class="note">Educational projects, not investment advice.</p></div></section>
+  </main>
+  <footer class="dark band" id="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p class="lede">I'm looking for opportunities in sales and trading, proprietary trading and quantitative research.</p>
+      <a class="mail" href="mailto:jobin3632@gmail.com">jobin3632@gmail.com</a>
+      <p class="more"><a href="resume.pdf">Resume</a> <a href="https://github.com/JobinJose43">GitHub</a> <a href="https://scanner.jobinjose.site">Earnings Options Scanner</a></p>
+    </div>
+  </footer>
+  <script src="steps.js"></script>
+</body>
+</html>

@@ -1,169 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New York ATM Strategy | Jobin Jose</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: 'Quicksand', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #2c3e50;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: #ffffff;
-        }
-
-        h1, h2, h3 {
-            color: #1a1a1a;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            border-bottom: 2px solid #e1e1e1;
-            padding-bottom: 0.5rem;
-        }
-
-        p, li {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        ul {
-            padding-left: 1.5rem;
-        }
-
-        img {
-            width: 100%;
-            margin: 1rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: 600;
-            border-bottom: 2px solid transparent;
-        }
-
-        .back-link:hover {
-            border-bottom: 2px solid #2c3e50;
-        }
-
-        .section {
-            margin-bottom: 2.5rem;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New York ATM Strategy | Jobin Jose</title>
+  <meta name="description" content="A rule-based intraday reversal strategy for the New York open.">
+  <meta property="og:title" content="New York ATM Strategy | Jobin Jose">
+  <meta property="og:description" content="A rule-based intraday reversal strategy for the New York open.">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&amp;display=swap">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>New York ATM Strategy – Sweep-Based Reversal Model</h1>
-
-        <div class="section">
-            <h2>Overview</h2>
-            <p>
-                <strong>Important Note:</strong> This strategy represents the foundational <em>entry model</em> of my broader trading system. While the New York ATM approach captures key sweep-based reversal setups, I frame my trades using additional confluences including higher-timeframe bias (1H/4H market structure), significant liquidity pools (equal highs/lows, session highs/lows, unfilled imbalances, trendline liquidity), as well as institutional tools like VWAP, moving averages, and stochastic divergences.
-            </p>
-            <p>
-                I am currently working toward integrating these advanced elements into the automated bot version of this strategy. Due to my limited programming knowledge, this is a gradual development process, but this page presents the essential reversal logic that underpins my discretionary and systemized trading approach.
-            </p>
-            <p>
-                The New York ATM Model is a structured intraday strategy designed to capture algorithmic stop-hunts and reversals during the New York session open. It focuses on liquidity sweeps of either Buy-Side or Sell-Side followed by confirmation using Fair Value Gaps (FVGs).
-            </p>
-            <p>
-                This model is executed between <strong>9:30 AM and 11.00AM EST</strong> on lower timeframes, but it reflects a higher-timeframe algorithmic behavior pattern. It is currently being enhanced to incorporate higher-timeframe bias, VWAP alignment, and moving average confluence for more precision.
-            </p>
-        </div>
-
-        <div class="section">
-            <h2>Strategy Logic</h2>
-            <ul>
-                <li>Mark the high (BSL) and low (SSL) between 7.00 am to 9.29 am EST.</li>
-                <li>Wait for a sweep of either BSL or SSL: indicating liquidity grab.</li>
-                <li>Detect a valid Fair Value Gap (FVG) in the opposite direction.</li>
-                <li>Enter only after a confirmed close through the FVG.</li>
-                <li>Set stop-loss at post-sweep high/low and target opposite liquidity level.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Key Concepts</h2>
-
-            <h3>Buy-Side & Sell-Side Liquidity (BSL & SSL)</h3>
-            <img src="images/liqlines.jpg" alt="Buy-Side and Sell-Side Liquidity Example">
-
-            <h3>Fair Value Gap (FVG)</h3>
-            <img src="images/fvg.jpg" alt="Fair Value Gap (FVG) Example">
-        </div>
-
-        <div class="section">
-            <h2>Trade Example: Reversal Entry Breakdown</h2>
-
-            <h3>1. Liquidity Sweep (Trap Setup)</h3>
-            <p>
-                The first condition for this setup is a sweep of either Buy-Side or Sell-Side Liquidity. This occurs when price breaks above the session high (BSL) or below the session low (SSL), triggering stops. This move is often used by institutions to trap retail traders and fill larger orders in the opposite direction.
-            </p>
-            <img src="images/sslsweep.jpg" alt="Liquidity Sweep Example">
-
-            <h3>2. Fair Value Gap Break (Order Flow Shift)</h3>
-            <p>
-                After the sweep, price must form and close through an opposing Fair Value Gap (FVG). This break signals a shift in order flow from expansion in the direction of the sweep to a reversal back inside the range. This is the primary confirmation that the sweep was a trap and not a breakout.
-            </p>
-            <img src="images/fvgclose.jpg" alt="FVG Close Confirmation">
-
-            <h3>3. Entry and Target</h3>
-            <p>
-                Once the FVG break is confirmed, the model waits for the very next candle to execute the trade. Stop-loss is placed at the high or low created during the sweep. The target is the opposite liquidity level,for example: if SSL was swept, the trade will target the previous BSL. This provides a clean and mechanical framework for directional bias, risk, and reward.
-            </p>
-            <img src="images/entryexit.jpg" alt="Trade Entry and Target Example">
-        </div>
-
-        <div class="section">
-            <h2>Backtest Performance</h2>
-            <p><strong>Period:</strong> August 24 – September 9, 2025</p>
-            <ul>
-                <li>Total Trades: 13</li>
-                <li>Win Rate: 76.92%</li>
-                <li>Net P&L: +$1,350</li>
-                <li>Max Drawdown: $260</li>
-                <li>Profit Factor: 4.18</li>
-            </ul>
-            <img src="images/pnl.jpg" alt="Backtest Chart">
-        </div>
-
-        <div class="section">
-            <h2>Ongoing Enhancements</h2>
-            <p>This version of the strategy is intentionally simple, using only liquidity and FVG structure. Upcoming features include:</p>
-            <ul>
-                <li>Higher-Timeframe bias (1H / 4H structure filters)</li>
-                <li>VWAP and Moving Average confluence</li>
-                <li>Improved exit logic with scaling and dynamic RR</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Technology</h2>
-            <ul>
-                <li>Platform: TradingView</li>
-                <li>Language: Pine Script (v5)</li>
-                <li>Execution: Semi-automated backtesting, one trade per day</li>
-                <li>Source: <a href="https://www.tradingview.com/script/TQZdIvcg-BSL-SSL-Sweep-FVG-Strategy-Jobin-c/" target="_blank">View Script</a></li>
-            </ul>
-        </div>
-
-        <a class="back-link" href="portfolio.html">&larr; Back to Portfolio</a>
+  <header class="dark">
+    <nav class="wrap bar" aria-label="Main">
+      <a class="name" href="index.html">Jobin Jose</a>
+      <ul>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="resume.pdf">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="wrap page-head">
+      <h1>New York ATM Strategy</h1>
+      <p class="lede">An intraday reversal model for the New York open, limited to one trade per day.</p>
     </div>
+  </header>
+  <main>
+    <section class="light band" aria-labelledby="rules">
+      <div class="wrap split">
+        <h2 id="rules">Rules</h2>
+        <div class="text">
+          <ol>
+            <li>Mark the high and low between 7:00 and 9:29 AM Eastern.</li>
+            <li>From 9:30 to 11:00, wait for price to trade through one of those levels.</li>
+            <li>Find a fair value gap (a three-candle price gap) in the opposite direction.</li>
+            <li>Wait for a candle to close through that gap, then enter on the next candle.</li>
+            <li>Place the stop beyond the sweep and target the opposite level.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="light band" aria-labelledby="example">
+      <div class="wrap split">
+        <h2 id="example">Example</h2>
+        <div class="text">
+          <figure>
+            <img src="images/entryexit.jpg" width="1217" height="620" alt="Price sweeps the low after 9:30, closes back through the gap, enters long and exits at the session high.">
+            <figcaption>A sweep of the low, long entry after a close through the gap, and exit at the high.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="light band" aria-labelledby="backtest">
+      <div class="wrap split">
+        <h2 id="backtest">Backtest</h2>
+        <div class="text">
+          <p>Aug 24 to Sep 9, 2025: 13 trades, 10 winners, profit factor 4.18, net $1,350, maximum drawdown $260.</p>
+          <p>Thirteen trades over about two weeks is too small a sample to show the strategy has an edge.</p>
+          <img src="images/pnl.jpg" width="1532" height="602" loading="lazy" alt="TradingView strategy tester showing the results listed above.">
+        </div>
+      </div>
+    </section>
+    <section class="light band" aria-labelledby="code">
+      <div class="wrap split">
+        <h2 id="code">Code</h2>
+        <div class="text">
+          <p>Written in Pine Script v5. <a href="https://www.tradingview.com/script/TQZdIvcg-BSL-SSL-Sweep-FVG-Strategy-Jobin-c/">View the script on TradingView</a>.</p>
+          <p class="note">Shared for education. Not investment advice.</p>
+          <p><a href="projects.html">All projects</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="dark band" id="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p class="lede">I'm looking for opportunities in sales and trading, proprietary trading and quantitative research.</p>
+      <a class="mail" href="mailto:jobin3632@gmail.com">jobin3632@gmail.com</a>
+      <p class="more"><a href="resume.pdf">Resume</a> <a href="https://github.com/JobinJose43">GitHub</a> <a href="https://scanner.jobinjose.site">Earnings Options Scanner</a></p>
+    </div>
+  </footer>
 </body>
 </html>
-
-

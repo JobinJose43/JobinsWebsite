@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What stocks do after earnings | Jobin Jose</title>
+  <meta name="description" content="1,216 earnings reactions from the Earnings Options Scanner.">
+  <meta property="og:title" content="What stocks do after earnings | Jobin Jose">
+  <meta property="og:description" content="1,216 earnings reactions from the Earnings Options Scanner.">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&amp;display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="dark">
+    <nav class="wrap bar" aria-label="Main">
+      <a class="name" href="index.html">Jobin Jose</a>
+      <ul>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="resume.pdf">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="wrap hero">
+      <h1>What stocks do after earnings</h1>
+      <p class="lede">Data from my Earnings Options Scanner. Each dot is one earnings report. Left means the stock fell afterward, right means it rose.</p>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Which reports to show">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="beat" aria-pressed="false">Beat estimates</button>
+          <button type="button" data-filter="miss" aria-pressed="false">Missed</button>
+        </div>
+        <select id="ticker" aria-label="Highlight a stock"><option value="">Highlight a stock</option></select>
+      </div>
+    </div>
+    <div class="wrap swarm">
+      <canvas id="swarm" role="img" aria-label="1,216 earnings reactions plotted by percent move. Of 990 earnings beats, the stock fell after 455."></canvas>
+      <div id="tip" class="tip" hidden></div>
+    </div>
+    <div class="wrap hero-foot">
+      <p id="readout" class="readout" aria-live="polite">Of 990 earnings beats, the stock fell after 455.</p>
+      <p class="note">159 stocks in the scanner, reports from July 2024 to November 24, 2026. Moves are close to close around the report. Delisted companies and reports with no known release time are left out. Moves beyond 25% sit at the edges. Source: Yahoo Finance.</p>
+    </div>
+  </header>
+  <main>
+    <section class="light band">
+      <div class="wrap">
+        <h2>What the data shows</h2>
+        <div class="findings">
+          <div><h3>A beat is close to a coin flip</h3><p>The stock fell after 455 of 990 beats, or 46%.</p></div>
+          <div><h3>A miss hurts, but not always</h3><p>78 of 224 misses were followed by a rise, or 35%.</p></div>
+          <div><h3>Big moves are the exception</h3><p>177 of 1,216 reports, or 15%, moved the stock 10% or more.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="light band">
+      <div class="wrap pair">
+        <div>
+          <h2>Reporting next</h2>
+          <p class="lede">The bar is the move options are pricing. Each dot is how the stock moved after a past report.</p>
+          <p class="actions"><a class="btn" href="https://scanner.jobinjose.site">Open the live scanner</a></p>
+        </div>
+        <div>
+          <div id="chart" class="chart"></div>
+          <ul class="key"><li class="k-range">Expected move through earnings</li><li>Past rise</li><li class="k-down">Past fall</li></ul>
+          <p class="note" style="margin-top:.5rem">Data from <span id="as-of"></span>. Not investment advice.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="dark band" id="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p class="lede">I'm looking for opportunities in sales and trading, proprietary trading and quantitative research.</p>
+      <a class="mail" href="mailto:jobin3632@gmail.com">jobin3632@gmail.com</a>
+      <p class="more"><a href="resume.pdf">Resume</a> <a href="https://github.com/JobinJose43">GitHub</a> <a href="https://scanner.jobinjose.site">Earnings Options Scanner</a></p>
+    </div>
+  </footer>
+  <script type="application/json" id="saved">{"asOf": "2026-11-24T21:19:09.992559+00:00", "rows": [{"symbol": "DELL", "date": "2026-11-24", "implied": 13.63, "past": [15.8, 32.8, 21.9, 5.8, -8.9, -2.1, -4.7, -12.2]}, {"symbol": "WDAY", "date": "2026-11-24", "implied": 9.93, "past": [5.8, 5.2, 2.2, -7.9, -2.8, -12.5, 6.2, -6.2]}, {"symbol": "HPQ", "date": "2026-11-24", "implied": 10.63, "past": [-2.9, -1.9, 0.1, -1.4, 4.6, -8.3, -6.8, -11.4]}, {"symbol": "DE", "date": "2026-11-25", "implied": 5.39, "past": [6.9, -5.2, 11.6, -5.7, -6.8, 3.8, -2.2, 8.0]}, {"symbol": "LI", "date": "2026-11-25", "implied": 6.31, "past": [-1.1, -1.5, -2.5, 0.6, 2.9, 2.1, -4.4, -13.6]}]}</script>
+  <script src="moves.js"></script>
+  <script src="swarm.js"></script>
+</body>
+</html>
